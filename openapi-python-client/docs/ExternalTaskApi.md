@@ -50,7 +50,7 @@ with openapi_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.ExternalTaskApi(api_client)
     id = 'id_example' # str | The id of the task to complete.
-complete_external_task_dto = {"workerId":"brick-layer","maxTasks":1,"topics":[{"topicName":"commit","lockDuration":10000}]} # CompleteExternalTaskDto |  (optional)
+complete_external_task_dto = {"workerId":"brick-layer","topics":[{"topicName":"complete"}],"variables":{"branch_link":{"value":"TODO","type":"string"}}} # CompleteExternalTaskDto |  (optional)
 
     try:
         api_instance.complete_external_task_resource(id, complete_external_task_dto=complete_external_task_dto)
